@@ -11,7 +11,7 @@ class UpdateProjectRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,20 @@ class UpdateProjectRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'likes' => 'required|integer|min:0',
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     * @return array
+     */
+    public function messages(): array
+    {
+        return [
+            'likes.required' => 'El número de likes es requerido',
+            'likes.integer' => 'El número de likes debe ser un entero',
+            'likes.min' => 'El número de likes debe ser un entero positivo',
         ];
     }
 }
