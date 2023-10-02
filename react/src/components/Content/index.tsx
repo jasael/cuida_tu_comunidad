@@ -20,9 +20,9 @@ const Content = () => {
 
   React.useEffect(() => {
     async function getProjects() {
-      const data = await fetch(
-        "https://site--cuida-tu-comunidad-laravel--hjdzjrjyd7b6.code.run/api/projects"
-      ).then((response) => response.json());
+      const data = await fetch(`${import.meta.env.VITE_API_URL}/projects`).then(
+        (response) => response.json()
+      );
 
       if (data.projects) {
         setProjects(data.projects);
@@ -31,7 +31,7 @@ const Content = () => {
 
     async function getStates() {
       const data = await fetch(
-        "https://www.universal-tutorial.com/api/getaccesstoken",
+        `${import.meta.env.VITE_STATES_URL}/getaccesstoken`,
         {
           method: "GET",
           headers: {
@@ -44,7 +44,7 @@ const Content = () => {
 
       if (data.auth_token) {
         const arrayOfObjects = await fetch(
-          "https://www.universal-tutorial.com/api/states/Mexico",
+          `${import.meta.env.VITE_STATES_URL}/states/Mexico`,
           {
             method: "GET",
             headers: {
@@ -72,7 +72,7 @@ const Content = () => {
       }`;
 
       const data = await fetch(
-        `https://site--cuida-tu-comunidad-laravel--hjdzjrjyd7b6.code.run/api/projects${query}`
+        `${import.meta.env.VITE_API_URL}/projects${query}`
       ).then((response) => response.json());
 
       if (data.projects) {

@@ -38,7 +38,7 @@ const CreateProject = () => {
     console.log(data);
 
     const response = await fetch(
-      "https://site--cuida-tu-comunidad-laravel--hjdzjrjyd7b6.code.run/api/projects",
+      `${import.meta.env.VITE_API_URL}/projects`,
       {
         method: "POST",
         headers: {
