@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 1rem;
+  background-color: var(--color-cherry);
+  color: var(--color-gold);
+}
+.header-logo {
+}
+
+.header-title {
+}
