@@ -1,0 +1,92 @@
+.project {
+  background-color: var(--color-white);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: min(30rem, 100%);
+}
+
+/* Header */
+.project-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Title and State */
+.project-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-info h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-green);
+}
+
+.project-info p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-gold);
+}
+
+/* Date and Trash */
+.project-date {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  color: var(--color-gold);
+}
+
+.project-date p {
+  font-weight: bold;
+}
+/* END Header */
+
+/* Body */
+.project-body {
+  padding: 1rem;
+  overflow-y: scroll;
+  height: 30rem;
+}
+
+.project-body p {
+  font-weight: bold;
+  color: var(--color-green);
+  text-align: left;
+}
+
+/* END Body */
+
+/* Footer */
+.project-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  color: var(--color-gold);
+}
+
+.project-footer p {
+  font-weight: bold;
+}
+
+.project-footer .likes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* END Footer */
+
+.btn-icon {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
