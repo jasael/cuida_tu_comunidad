@@ -1,11 +1,33 @@
 import Project from "./components/Project";
 import "./index.css";
-const ProjectList = ({ projects }: unknown) => {
+const ProjectList = ({
+  projects,
+}: {
+  projects: {
+    id: string;
+    title: string;
+    state: string;
+    description: string;
+    date: string;
+    likes: number;
+    author: string;
+  }[];
+}) => {
   return (
     <div className="project-list">
-      {projects.map((project: unknown) => (
-        <Project key={project.id} project={project} />
-      ))}
+      {projects.map(
+        (project: {
+          id: string;
+          title: string;
+          state: string;
+          description: string;
+          date: string;
+          likes: number;
+          author: string;
+        }) => (
+          <Project key={project.id} project={project} />
+        )
+      )}
     </div>
   );
 };

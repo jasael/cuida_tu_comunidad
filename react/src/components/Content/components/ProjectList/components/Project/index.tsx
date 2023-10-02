@@ -1,7 +1,19 @@
 import "./index.css";
 import TrashIcon from "../../../../../icons/TrashIcon";
 import HearthIcon from "../../../../../icons/HearthIcon";
-const Project = ({ project }: unknown) => {
+const Project = ({
+  project,
+}: {
+  project: {
+    id: string;
+    title: string;
+    state: string;
+    description: string;
+    date: string;
+    likes: number;
+    author: string;
+  };
+}) => {
   const date = new Date(project.date).toLocaleString("es-MX", {
     day: "2-digit",
     month: "2-digit",

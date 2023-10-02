@@ -4,8 +4,17 @@ import "./index.css";
 import ProjectList from "./components/ProjectList";
 
 const Content = () => {
-  const [isLoading, setIsLoading] = React.useState(false);
-  const [projects, setProjects] = React.useState([]);
+  const [projects, setProjects] = React.useState<
+    {
+      id: string;
+      title: string;
+      state: string;
+      description: string;
+      date: string;
+      likes: number;
+      author: string;
+    }[]
+  >([]);
   const [states, setStates] = React.useState([]);
   const [filters, setFilters] = React.useState({
     search: "",
@@ -53,10 +62,13 @@ const Content = () => {
           }
         ).then((response) => response.json());
 
-        const states = arrayOfObjects.reduce((array, item) => {
-          array.push(item.state_name);
-          return array;
-        }, []);
+        const states = arrayOfObjects.reduce(
+          (array: string[], item: { state_name: string }) => {
+            array.push(item.state_name);
+            return array;
+          },
+          []
+        );
 
         setStates(states);
       }
